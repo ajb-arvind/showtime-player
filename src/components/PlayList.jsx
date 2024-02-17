@@ -13,6 +13,7 @@ const PlayList = forwardRef(
     },
     ref
   ) => {
+    console.log(index, currentVideoIndex);
     return (
       <div
         className="flex mb-3  "
@@ -22,7 +23,7 @@ const PlayList = forwardRef(
         {...dragHandleProps}
       >
         <div className=" flex items-center pl-1 pr-2 text-sm font-medium text-neutral-500 text-right">
-          {video.id === currentVideoIndex.toString() ? (
+          {index === +currentVideoIndex ? (
             <div className="size-6 flex items-center justify-end">
               <FaPlay />
             </div>

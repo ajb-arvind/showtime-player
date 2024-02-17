@@ -14,10 +14,9 @@ const VideoPlayerPage = () => {
   };
 
   //play next video
-
   const handleNextVideoPlay = () => {
     if (currentVideoIndex < videos.length - 1) {
-      setCurrentVideoIndex((prevIndex) => prevIndex + 1);
+      setCurrentVideoIndex((prevIndex) => +prevIndex + 1);
     } else {
       setCurrentVideoIndex(0);
     }
@@ -28,7 +27,22 @@ const VideoPlayerPage = () => {
 
     const items = Array.from(videos);
     const [reorderedItem] = items.splice(result.source.index, 1);
+    console.log(result.source.index);
     items.splice(result.destination.index, 0, reorderedItem);
+
+    if (currentVideoIndex === result.source.index) {
+      setCurrentVideoIndex(result.destination.index);
+    } else if (
+      currentVideoIndex > result.source.index &&
+      currentVideoIndex <= result.destination.index
+    ) {
+      setCurrentVideoIndex(+currentVideoIndex - 1);
+    } else if (
+      currentVideoIndex < result.source.index &&
+      currentVideoIndex >= result.destination.index
+    ) {
+      setCurrentVideoIndex(+currentVideoIndex + 1);
+    }
 
     setVideos(items);
   }

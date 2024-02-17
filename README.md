@@ -1,8 +1,21 @@
-# React + Vite
+# Rigi Video Player
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Following are features:
 
-Currently, two official plugins are available:
+1. VideoPlayer component
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Play Pause
+- seeking using seeking bar
+- current timer displaying
+- autoplay next video in the playlist
+- speed selector to change playback speed
+- fullscreen mode
+- volume control with mute button
+- stop video 
+
+2. PlayList component
+
+- show all video the thumbnail and title in playlist
+- reorder playlist
+- click on any video from playlist
+

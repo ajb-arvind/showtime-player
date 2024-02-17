@@ -41,6 +41,8 @@ const VideoPlayer = ({ src, thumbnail, playNext }) => {
     toggleFullScreen,
   } = useVideoPlayer(videoRef, videoContainerRef, timelineContainerRef);
 
+  // console.log(isPlaying);
+
   return (
     <div
       ref={videoContainerRef}
