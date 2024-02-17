@@ -27,7 +27,6 @@ const VideoPlayerPage = () => {
 
     const items = Array.from(videos);
     const [reorderedItem] = items.splice(result.source.index, 1);
-    console.log(result.source.index);
     items.splice(result.destination.index, 0, reorderedItem);
 
     if (currentVideoIndex === result.source.index) {
