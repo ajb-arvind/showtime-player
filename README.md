@@ -1,6 +1,6 @@
 # Rigi Video Player
 
-![Uploading image.png…]()
+[video player](./src/assets/mainpage.png)
 
 
 
