@@ -13,7 +13,6 @@ const PlayList = forwardRef(
     },
     ref
   ) => {
-    console.log(index, currentVideoIndex);
     return (
       <div
         className="flex mb-3  "

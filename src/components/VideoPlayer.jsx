@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import useVideoPlayer from '../hooks/useVideoPlayer';
 import {
   FaPlay,
@@ -40,8 +40,6 @@ const VideoPlayer = ({ src, thumbnail, playNext }) => {
     changePlaybackSpeed,
     toggleFullScreen,
   } = useVideoPlayer(videoRef, videoContainerRef, timelineContainerRef);
-
-  // console.log(isPlaying);
 
   return (
     <div
