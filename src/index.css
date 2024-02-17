@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .timeline::after {
+    right: calc(100% - var(--progress-position));
+  }
+
+  .timeline::before {
+    right: calc(100% - var(--preview-position));
+  }
+  .thumb-indicator {
+    left: var(--progress-position);
+  }
+}
