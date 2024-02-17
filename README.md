@@ -1,6 +1,6 @@
 # Rigi Video Player
 
-[video player](./src/assets/mainpage.png)
+![video player](./src/assets/mainpage.png)
 
 
 
