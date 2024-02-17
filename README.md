@@ -19,3 +19,4 @@ Following are features:
 - reorder playlist
 - click on any video from playlist
 
+To Open the Player use this Link [VideoPlayer](https://showtime-player.netlify.app/)
