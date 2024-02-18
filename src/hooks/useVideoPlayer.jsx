@@ -86,6 +86,7 @@ const useVideoPlayer = (videoRef, videoContainerRef, timelineContainerRef) => {
   };
 
   const onLoadedData = (e) => {
+    setIsPlaying(true);
     setIsWaiting(false);
   };
 
@@ -96,6 +97,21 @@ const useVideoPlayer = (videoRef, videoContainerRef, timelineContainerRef) => {
     setProgress(0);
     startProgressLoop();
   };
+
+  const startVideo = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      videoRef.current.currentTime = 0;
+      setIsPlaying(true);
+      setProgress(0);
+    }
+  };
+  // useEffect(() => {
+  //   document.body.addEventListener('mousemove', startVideo);
+  //   return () => {
+  //     document.body.removeEventListener('mousemove', startVideo);
+  //   };
+  // }, []);
 
   const stopVideo = () => {
     if (videoRef.current) {
@@ -241,6 +257,7 @@ const useVideoPlayer = (videoRef, videoContainerRef, timelineContainerRef) => {
     togglePlayPause,
     startProgressLoop,
     stopProgressLoop,
+    startVideo,
     stopVideo,
     onWaiting,
     onLoadedData,
