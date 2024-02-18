@@ -14,7 +14,6 @@ const VideoPlayerPage = () => {
     
   };
 
-  //play next video
   const handleNextVideoPlay = () => {
     if (currentVideoIndex < videos.length - 1) {
       setCurrentVideoIndex((prevIndex) => +prevIndex + 1);
@@ -55,6 +54,7 @@ const VideoPlayerPage = () => {
             <VideoPlayer
               src={video?.sources}
               thumbnail={video?.thumb}
+              title={video.title}
               playNext={handleNextVideoPlay}
             />
           </div>
