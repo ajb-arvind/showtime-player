@@ -11,9 +11,9 @@ const VideoPlayerPage = () => {
 
   const selectVideo = (id) => {
     setCurrentVideoIndex(id);
+    console.log(id);
   };
 
-  //play next video
   const handleNextVideoPlay = () => {
     if (currentVideoIndex < videos.length - 1) {
       setCurrentVideoIndex((prevIndex) => +prevIndex + 1);

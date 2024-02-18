@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useVideoPlayer, useDocumentTitle } from '../hooks';
 import {
   FaPlay,
@@ -31,6 +31,7 @@ const VideoPlayer = ({ src, thumbnail, playNext, title }) => {
     togglePlayPause,
     startProgressLoop,
     stopProgressLoop,
+    startVideo,
     stopVideo,
     onWaiting,
     onLoadedData,
@@ -46,12 +47,11 @@ const VideoPlayer = ({ src, thumbnail, playNext, title }) => {
   return (
     <div
       ref={videoContainerRef}
-      className=" h-full w-full relative flex justify-center  group rounded-md group bg-black "
+      className=" h-full w-full relative flex justify-center  rounded-md group bg-black "
     >
-      {/* buffer spinner */}
       {isWaiting && (
         <div className="absolute size-10 flex top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <FaSpinner className=" w-full h-full animate-spin" />
+          <FaSpinner className=" w-full h-full animate-spin text-secondary-400" />
         </div>
       )}
       <video
@@ -69,7 +69,6 @@ const VideoPlayer = ({ src, thumbnail, playNext, title }) => {
         autoFocus
       />
 
-      {/* controls */}
       <div
         className={`pb-1 flex flex-col absolute bottom-0 w-full flex-wrap rounded-md z-10 text-white opacity-0  transition-opacity ease-in-out duration-150 group-hover:opacity-100 group-focus-within:opacity-100 ${
           !isPlaying ? ' opacity-100' : 'opacity-0'
@@ -85,11 +84,9 @@ const VideoPlayer = ({ src, thumbnail, playNext, title }) => {
               '--preview-position':
                 Math.round(previewProgress * 100) / 100 + '%',
             }}
-            className={`timeline bg-neutral-400/50 h-1 w-full relative hover:h-2
+            className="timeline bg-neutral-400/50 h-1 w-full relative hover:h-2
              before:absolute before:left-0 before:bottom-0 before:top-0 before:bg-slate-300 before:hidden hover:before:block
-             after:absolute after:left-0 after:top-0 after:bottom-0 after:bg-red-600 
-             
-        `}
+             after:absolute after:left-0 after:top-0 after:bottom-0 after:bg-red-600 "
           >
             <div className="thumb-indicator absolute bg-red-600 -top-1/2 h-[200%] rounded-full  scale-0 group-hover/timeline:scale-100 -translate-x-2/4 aspect-square transition-all ease-in-out duration-75"></div>
           </div>
