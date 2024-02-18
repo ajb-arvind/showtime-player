@@ -11,6 +11,7 @@ const VideoPlayerPage = () => {
 
   const selectVideo = (id) => {
     setCurrentVideoIndex(id);
+    
   };
 
   //play next video
