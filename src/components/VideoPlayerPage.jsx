@@ -54,6 +54,7 @@ const VideoPlayerPage = () => {
             <VideoPlayer
               src={video?.sources}
               thumbnail={video?.thumb}
+              title={video.title}
               playNext={handleNextVideoPlay}
             />
           </div>

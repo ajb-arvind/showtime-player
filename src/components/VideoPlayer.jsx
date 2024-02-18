@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import useVideoPlayer from '../hooks/useVideoPlayer';
+import { useVideoPlayer, useDocumentTitle } from '../hooks';
 import {
   FaPlay,
   FaPause,
@@ -13,7 +13,7 @@ import {
 import { PlayerButton } from './UIComponent';
 import { formatDuration } from '../utils/Utils';
 
-const VideoPlayer = ({ src, thumbnail, playNext }) => {
+const VideoPlayer = ({ src, thumbnail, playNext, title }) => {
   const videoRef = useRef(null);
   const videoContainerRef = useRef(null);
   const timelineContainerRef = useRef(null);
@@ -40,6 +40,8 @@ const VideoPlayer = ({ src, thumbnail, playNext }) => {
     changePlaybackSpeed,
     toggleFullScreen,
   } = useVideoPlayer(videoRef, videoContainerRef, timelineContainerRef);
+
+  useDocumentTitle(title);
 
   return (
     <div
