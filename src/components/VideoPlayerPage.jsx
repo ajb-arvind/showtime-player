@@ -1,6 +1,6 @@
 import VideoPlayer from './VideoPlayer';
 import PlayList from './PlayList';
-import { mediaJSON } from '../data/videoData';
+import { mediaJSON } from '../utils/constant/videoData';
 import { useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
@@ -11,7 +11,6 @@ const VideoPlayerPage = () => {
 
   const selectVideo = (id) => {
     setCurrentVideoIndex(id);
-    
   };
 
   const handleNextVideoPlay = () => {

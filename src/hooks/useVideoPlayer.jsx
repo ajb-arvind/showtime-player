@@ -18,27 +18,6 @@ const useVideoPlayer = (videoRef, videoContainerRef, timelineContainerRef) => {
     duration = videoRef.current.duration;
   }
 
-  // useEffect(() => {
-  //   function handleKeyDown(e) {
-  //     console.log(e.code);
-  //     switch (e.code.toLowerCase()) {
-  //       case 'Space':
-  //         togglePlayPause();
-  //         break;
-  //     }
-  //   }
-
-  //   document.addEventListener('keydown', handleKeyDown);
-
-  //   return () => {
-  //     document.removeEventListener('keydown', handleKeyDown);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-
-  // }, [videoRef.current]);
-
   const updateProgress = () => {
     if (videoRef.current) {
       const value =
@@ -48,7 +27,6 @@ const useVideoPlayer = (videoRef, videoContainerRef, timelineContainerRef) => {
   };
 
   //progress loop
-
   const startProgressLoop = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
@@ -106,12 +84,6 @@ const useVideoPlayer = (videoRef, videoContainerRef, timelineContainerRef) => {
       setProgress(0);
     }
   };
-  // useEffect(() => {
-  //   document.body.addEventListener('mousemove', startVideo);
-  //   return () => {
-  //     document.body.removeEventListener('mousemove', startVideo);
-  //   };
-  // }, []);
 
   const stopVideo = () => {
     if (videoRef.current) {
