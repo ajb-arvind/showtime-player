@@ -5,7 +5,7 @@
 
 
 ## Introduction
-Rigi Video Player is a versatile web application that offers seamless playback of videos with a variety of features to enhance the viewing experience. Whether you're watching a single video or managing an entire playlist, Rigi Video Player provides the tools you need for smooth playback and control.
+Show Video Player is a versatile web application that offers seamless playback of videos with a variety of features to enhance the viewing experience. Whether you're watching a single video or managing an entire playlist, Rigi Video Player provides the tools you need for smooth playback and control.
 
 ## Features
 
